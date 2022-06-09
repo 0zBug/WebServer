@@ -1,5 +1,5 @@
 
-local Socket = require("socket").bind('*', 5000)
+local Socket = require("socket").bind("127.0.0.1", 5000)
 
 if not Socket then
 	print("Error: Could not bind socket.\n")
