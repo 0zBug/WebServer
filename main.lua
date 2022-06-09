@@ -19,7 +19,7 @@ while true do
 	if not Error then
 		local Split = {}
 
-		for Line in Request:gmatch("[^ ]+") do
+		for Line in string.gmatch(Request, "[^ ]+") do
 			table.insert(Split, Line)
 		end
 
