@@ -1,4 +1,4 @@
 # WebServer
-A 50 line webserver written in lua
-### Dependencies
+A simple webserver written in lua
+## Dependencies
 lua-socket
