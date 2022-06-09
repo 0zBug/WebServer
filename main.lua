@@ -6,7 +6,9 @@ if not Socket then
 	os.exit(0)
 end
 
-print(string.format("Listening on %s:%s", Socket:getsockname()))
+local Ip, Port = Socket:getsockname()
+
+print(string.format("Listening to %s:%s", Ip, Port))
 
 while true do
 	local Client = Socket:accept()
@@ -21,9 +23,9 @@ while true do
 			table.insert(Split, Line)
 		end
 
-		local Type, Url = Split[1], Split[2]
+		local Method, Url = Split[1], Split[2]
 
-		print("[Request] type: " .. Type .. " url: " .. Url)
+		print(string.format("[Request] Method: %s, Url: %s:%s%s", Method, Ip, Port, Url))
 
 		local Directory = "./"
 
